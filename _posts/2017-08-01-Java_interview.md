@@ -179,15 +179,16 @@ tag: 学习总结
 
 ### 9.集合 ###
 
-	Collection接口:
-  		 向集合中添加元素  add(Object obj)    addAll(Collection coll)
- 		 从集合中删除元素  remove(Object obj)   removeAll(Collection coll)
-  		 Collection集合中没有修改集合中元素的方法（Collection子类中有）
-  		 Collection中没有直接获取元素的方法，只有一个遍历集合的方法iterator
-  		 contains()判断集合中是否包含指定的元素
-  		 clear() 删除集合中所有的元素
+Collection接口:
 
- 	 |-----List接口：有序、可以存储重复元素、可以通过角标来操作集合(添、删、改)List集合有一个专属的迭代器：ListIterator
+		向集合中添加元素  add(Object obj)    addAll(Collection coll)
+		从集合中删除元素  remove(Object obj)   removeAll(Collection coll)
+		Collection集合中没有修改集合中元素的方法（Collection子类中有）
+		Collection中没有直接获取元素的方法，只有一个遍历集合的方法iterator
+		contains()判断集合中是否包含指定的元素
+		clear() 删除集合中所有的元素
+
+List接口：有序、可以存储重复元素、可以通过角标来操作集合(添、删、改)List集合有一个专属的迭代器：ListIterator
 
       通过角标来添加元素   add(int index,Object obj)
       通过角标来删除元素   remove(int index)  返回所删除的元素
@@ -207,8 +208,8 @@ tag: 学习总结
 	          getLast()  获取尾角标元素
       |----Vector   底层使用数组结构
 
-  	|-----Set接口：无序、不能存储重复元素，没有角标只能使用迭代器来遍历集合
-               Set接口是继承了Collection接口，所以Set集合中的方法都来自于Collection
+Set接口：无序、不能存储重复元素，没有角标只能使用迭代器来遍历集合,Set接口是继承了Collection接口，所以Set集合中的方法都来自于Collection
+
       |----HashSet：实现了Set接口，底层是哈希表结构，只能使用Iterator来遍历
           |----LinkedHashSet类：底层是哈希+链表结构
       |----TreeSet：实现了Set接口，底层是二叉树结构，在添加元素时会对元素进行排序
@@ -217,8 +218,9 @@ tag: 学习总结
 					2，比较器排序 （使用Comparetor进行排序）
 	                注意：当对象同时具有自然排序和比较器排序，优先比较器排序
 
-	Map接口：不能直接使用迭代器遍历。
-  		添加：  put(K key,V value)    key在集合中是唯一的   value可以存储重复元素
+Map接口：不能直接使用迭代器遍历。
+
+		添加：  put(K key,V value)    key在集合中是唯一的   value可以存储重复元素
 	        put方法在添加对象时，key就表示键，value就表示值，put存储的是一对键值对
 	        当存储对象时，会按key的名称先进行查找，没有找到相同的key，就存储value对象，并返回null
 	        如果存储时有相同的key已经在map集合中存在了，value对象会覆盖之前的对象，并返回之前的对象(旧的value对象)
@@ -237,7 +239,7 @@ tag: 学习总结
 	         containsValue(Object value) 根据指定的value去map集合判断有没有相同的value
 	         isEmpty()  判断map集合是否为空
 
- 	 |-----Hashtable类：数据结构：哈希表； 不允许使用null作为key和value，已经被HashMap代替
+	|-----Hashtable类：数据结构：哈希表； 不允许使用null作为key和value，已经被HashMap代替
          |----Properties类：属性集。存储键值都是字符串，可以利用流来对键值进行操作
                          后面学习到IO流时再讲解
   	|----HashMap类：数据结构：哈希表； 允许使用null作为key和value，但是key只能有一个null（key要保证唯一性），value可以存储重复对象
@@ -248,13 +250,15 @@ tag: 学习总结
 
 ### 10.IO流 ###
 
-	字节流：字节输入流、字节输出流
+字节流：字节输入流、字节输出流
+
 	   InputStream：所有字节输入流的超类
 	      |----FileInputStream：用来对文件进行读取操作，按字节读取
 	         构造方法：
 	FileInputStream  fis = new FileInputStream(“文件路径”);
 	FileInputStream  fis = new FileInputStream(文件对象);
-	常用方法：
+常用方法：
+
 	close(); 关闭字节输入流对象
 	int ch= read(); 一次读取一个字节数据
 	int len = read(byte[]) 一次读取多个字节数据，存储在byte[]中
@@ -279,7 +283,8 @@ tag: 学习总结
 	  BufferedInputStream  bis = new BufferedInputStream(new 字节输入流对象(“文件路径”));
 	  BufferedOutputStream bos= new BufferedOutputStream(new 字节输出流对象(“文件”))
 	
-	字符流：字符输入流、字符输出流
+字符流：字符输入流、字符输出流
+
 	字符流 = 字节流 +　编码表
 	  Reader：所有字符输入流的超类
 	     |----InputStreamReader：把字节流转换为字符流的转换流，可以指定编码表
@@ -303,7 +308,8 @@ tag: 学习总结
 	           write(String)
 	           flush();　把存储在字节缓冲区中的数据，写入到文件中
 	
-	字符缓冲区对象：
+字符缓冲区对象：
+
 	 BufferedReader 高效流：字符输入流，可以按行读取
 	 BufferedWriter 高效流：字符输出流，可以写入一行，并使用newLine跨平台换行
 
