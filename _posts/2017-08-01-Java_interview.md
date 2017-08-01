@@ -396,8 +396,63 @@ TCP协议通信需要经过三次握手之后，可以实现数据的传输
 
 适用于写比较少的情况下
 
+### 4.分页 ###
+
+**mysql分页:**
+
+	select * from table limit m,n
+
+**oracle分页:**
+
+	select * from (select rownum r,t.* from table t where rownum <= 6) t1 r >=4;
+
+
+### 5.创建存储过程 ###
+
+	create or replace procedure 存储过程名 
+	
+	is 变量 
+	
+	begin xxx
+	
+	end xxx
+
+
+
 
 ## 五.linux操作 ##
+
+![](http://i.imgur.com/DBdC97l.png)
+
+----------
+
+![](http://i.imgur.com/Qzlxkdx.png)
+
+----------
+
+![](http://i.imgur.com/c4dQHS8.png)
+
+----------
+
+![](http://i.imgur.com/vn8rdif.png)
+
+----------
+
+![](http://i.imgur.com/K9ZQ7La.png)
+
+
+----------
+
+![](http://i.imgur.com/NqC5Bze.png)
+
+----------
+
+![](http://i.imgur.com/O5dEIsh.png)
+
+
+----------
+
+![](http://i.imgur.com/lKvgM1K.png)
 
 ## 六.项目 ##
 
