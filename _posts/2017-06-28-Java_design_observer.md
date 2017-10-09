@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java设计模式之---观察者模式
+title: Java设计模式(19)---观察者模式
 date: 2017-06-28 
 tag: Java设计模式
 ---
